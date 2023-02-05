@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styla.css">
+        <title>Best Cars</title>
+    </head>
+
+    <header> 
+        <div class="mymenu">
+            <a href="./index.php">Home</a>
+            <a href="./Bookings.html">Bookings</a>
+            <a class="active" href="./BookCar.html">Book Car</a>
+            <a href="./addcustomer.html">Add Customer</a>
+            
+          </div>
+    </header>
+
+        <body>
+                <div class="form-container">
+                    <form action="php/makecontract.php" method="GET">
+                        <h2 class="form-title">Book a Car</h2>
+                        <h3 class="customerAdditionResponse"></h3>
+
+                        <label for="customerID">Customer ID: </label>
+                        <div class="input-group">
+                            <input type="text" name="customerID" />
+                            <span></span>
+                        </div>
+
+                        <label for="carID">Car ID: </label>
+                        <div class="input-group">
+                            <input type="text" name="carID" />
+                            <span></span>
+                        </div>
+
+
+
+                        <label for="StartDate">StartDate: </label>
+                        <div class="input-group">
+                            <input type="date" name="StartDate" placeholder="YYYY/MM/DD"/>
+                            <span></span>
+                        </div>
+
+                        <label for="EndDate">EndDate: </label>
+                        <div class="input-group">
+                            <input type="date" name="EndDate" placeholder="YYYY/MM/DD"/>
+                            <span></span>
+                        </div>
+
+
+
+                        <input type="submit" value="Submit" />
+                    </form>
+             
+                </div>
+    
+         
+            </body>
+        <footer>
+            <div class="Footer">
+            <p>This is the creation of Masked Alkindi</p>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+
+</html>

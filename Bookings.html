@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Best Cars</title>
+        <link rel="stylesheet" href="styla.css">
+        <script src="functions.js" defer></script>
+    </head>
+    <header>
+        <div class="mymenu">
+            <a href="./index.php">Home</a>
+            <a class="active" href="./Bookings.html">Bookings</a>
+            <a href="./BookCar.html">Book Car</a>
+            <a href="./addcustomer.html">Add Customer</a>
+            
+          </div>
+    </header>
+    <body>
+        <div class = "form-container">
+            <form action="php/show_bookings.php" method="GET">
+                <h2 class="form-title">Get All Invoices of Customer with ID</h2>
+
+                <label for="customerID">ID: </label>
+                <div class="input-group">
+                    <input type="text" name="customerID" placeholder="customerID" />
+                    <span></span>
+                </div>
+
+                <input type="submit" value="Submit" />
+                
+            </form>
+           
+        </div>
+        <footer>
+        <div class="footer">
+            <p>This is the creation of Masked Alkindi</p>
+        </div>
+        </footer>
+    </body>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</html>

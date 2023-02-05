@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Best Cars</title>
+        <link rel="stylesheet" href="styla.css">
+        <script src="functions.js" defer></script>
+    </head>
+
+    <header> 
+        <div class="mymenu">
+            <a href="./index.php">Home</a>
+            <a href="./Bookings.html">Bookings</a>
+            <a class="active" href="./BookCar.html">Book Car</a>
+            <a href="./addcustomer.html">Add Customer</a>
+            
+          </div>
+    </header>
+
+        <body> 
+                <div class="form-container">
+                    <form action="php/insert.php" method="POST">
+                        <h2 class="form-title">Add New Customer</h2>
+
+                        <h3 class="customerAdditionResponse"></h3>
+
+                        <label for="customerID">ID: </label>
+                        <div class="input-group">
+                            <input type="text" name="customerID" />
+                            <span></span>
+                        </div>
+
+
+                        <label for="firstNameCustomer">First Name: </label>
+                        <div class="input-group">
+                            <input type="text" name="firstNameCustomer" />
+                            <span></span>
+                        </div>
+                        
+
+                        <label for="lastNameCustomer">Last Name: </label>
+                        <div class="input-group">
+                            <input type="text" name="lastNameCustomer" />
+                            <span></span>
+                        </div>
+
+                        <label for="Phone Number">Phone Number: </label>
+                        <div class="input-group">
+                            <input type="text" name="PhoneNumber" placeholder="PhoneNumber" />
+                            <span></span>
+                        </div> 
+
+                        <label for="City">City: </label>
+                        <div class="input-group">
+                            <input type="text" name="City" placeholder="City" />
+                            <span></span>
+                        </div>
+
+
+
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+         
+        </body>
+        <footer>
+            <div class="Footer">
+            <p>This is the creation of Masked Alkindi</p>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+
+</html>

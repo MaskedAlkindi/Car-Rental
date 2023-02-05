@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>invoice</title>
+<style type="text/css">
+table {
+margin: 8px;
+}
+
+th {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+background: #666;
+color: #FFF;
+padding: 2px 6px;
+border-collapse: separate;
+border: 1px solid #000;
+}
+
+td {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+border: 1px solid #DDD;
+}
+</style>
+</head>
+<body>
+<?php
+require "create_connection.php";
+// INSERTING
+echo "<table>";
+$customerID = $_GET['customerID'];
+
+
+$SQLQuery = "SELECT `IDContract`, `FNC`, `LNC`, `City`, `Phone`,`startdate`, `enddate`,`make`, `model`, `color`, `mileage`, `typecar`, `carpriceperday` FROM `customer`, `contract`, `vehicle`\n"
+
+. "WHERE `customer`.`IDC` = `contract`.`IDC`\n"
+
+. "AND `contract`.`IDCar` = `vehicle`.`IDCar`\n"
+. "AND `customer`.`IDC` = {$customerID};";
+
+if (!$QueryResults = mysqli_query($conn, $SQLQuery)) {
+    die("Query Processing Failed: \n" . mysqli_error($conn));
+}
+
+$counter = 1;
+$myfile = fopen("invoice.txt", "w");
+echo "<tr onmouseover=\"hilite(this)\" onmouseout=\"lowlite(this)\"><td>CustomerID</td><td>First Name</td></tr>\n";
+foreach ($QueryResults as $invoiceRow) {
+    $QCN = "" . $invoiceRow['IDContract'] . "\n"; 
+    $QFNC = "" . $invoiceRow['FNC'] . "\n";
+    $QLNC = "" . $invoiceRow['LNC'] . "\n";
+    $QC = "" . $invoiceRow['City'] . "\n";
+    $QP = "" . $invoiceRow['Phone'] . "\n";
+    $QSD = "" . $invoiceRow['startdate'] . "\n";
+    $QED = "" . $invoiceRow['enddate'] . "\n";
+    echo "<tr onmouseover=\"hilite(this)\" onmouseout=\"lowlite(this)\"><td>$QCN</td>                <td>$QFNC</td></tr>\n";
+    echo "<tr onmouseover=\"hilite(this)\" onmouseout=\"lowlite(this)\"><td>$QLNC</td>                <td>$QC</td></tr>\n";
+    echo "<tr onmouseover=\"hilite(this)\" onmouseout=\"lowlite(this)\"><td>$QP</td>                <td>$QSD</td></tr>\n";
+    echo "<tr onmouseover=\"hilite(this)\" onmouseout=\"lowlite(this)\"><td>$QED</td>";                
+    $counter += 1;
+};
+mysqli_close($conn);
+?>
+</body>
+</html>
+
+
+
+
+
+
+
+
+    
+
+
